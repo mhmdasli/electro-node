@@ -1,0 +1,26 @@
+{
+  "name": "electro-node",
+  "version": "1.0.0",
+  "description": "electron-node App",
+  "main": "main.js",
+  "scripts": {
+    "prebuild": "npm install && cd ./app && npm install",
+    "start": "electron .",
+    "build": "electron-packager . electro-node --platform win32 --arch x64 --out dist/",
+    "setup": "electron-installer-windows --src dist/electro-node-win32-x64/ --dest dist/installers/"
+  },
+  "author": {
+    "name": "Mohamad Asli",
+    "email": "m.ali2910@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^5.0.7",
+    "electron-installer-windows": "^2.0.0",
+    "electron-winstaller": "^3.0.4"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^4.1.2"
+  }
+}

@@ -1,0 +1,9 @@
+<div class="card">
+    <h3 class="card-header">Online Users (<span id="online-users"></span>)</h3>
+    <ul class="card-body" id="users">
+        {% for user in users %}
+            <li>user: {{ user }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
