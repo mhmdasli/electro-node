@@ -2,25 +2,28 @@
   "name": "electro-node",
   "version": "1.0.0",
   "description": "electron-node App",
-  "main": "main.js",
-  "scripts": {
-    "prebuild": "npm install && cd ./app && npm install",
-    "start": "electron .",
-    "build": "electron-packager . electro-node --platform win32 --arch x64 --out dist/",
-    "setup": "electron-installer-windows --src dist/electro-node-win32-x64/ --dest dist/installers/"
-  },
+  "license": "MIT",
   "author": {
     "name": "Mohamad Asli",
     "email": "m.ali2910@gmail.com"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "^5.0.7",
-    "electron-installer-windows": "^2.0.0",
-    "electron-winstaller": "^3.0.4"
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "prebuild": "npm install && cd ./app && npm install",
+    "start": "electron .",
+    "exe32": "electron-packager . electro-node --platform win32 --arch ia32 --out dist/  --icon app/public/img/logo.ico",
+    "exe64": "electron-packager . electro-node --platform win32 --arch x64 --out dist/ --ignore \"(dist|node_modules/electron.*)\" --icon app/public/img/logo.ico",
+    "set32": "electron-installer-windows --src dist/electro-node-win32-ia32/ --dest dist/installers/ia32/ --config config.json",
+    "set64": "electron-installer-windows --src dist/electro-node-win32-x64/ --dest dist/installers/x64/ --config config.json",
+    "clean": "rimraf dist",
+    "setup": "npm run clean && npm run exe32 && npm run set32 && npm run exe64 && npm run set64"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
-    "electron-updater": "^4.1.2"
+    "electron-installer-windows": "*",
+    "electron-packager": "*",
+    "electron-prebuilt": "*",
+    "fs-plus": "*",
+    "rimraf": "*"
   }
 }

@@ -73,7 +73,7 @@ const template = [
     submenu: [
       {
         label: 'Learn More',
-        click () { require('electron').shell.openExternalSync('https://documenter.getpostman.com/view/2105164/SVYuqcjg') }
+        click () { require('electron').shell.openExternalSync('https://github.com/mhmdasli/electro-node') }
       }
     ]
   }

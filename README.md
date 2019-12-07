@@ -2,6 +2,17 @@
 electro-node is a Desktop App And Server
 frontend and backend connected with the x-handler on the client and server
 
+## file structure
+root-folder/
+    └── app/                        -- express app
+    ├─────└── publiic/                -- main html and js/css libraries
+    ├─────└── routes/                 -- routers folder
+    ├─────└── x-handler/              -- x-handler server side functions and views
+    ├─────└── express.js              -- app entery point
+    └── config /                    -- includes squirrel installition config
+    └── menu                        -- main menue settings
+    └── main.js                     -- entery point 
+
 ## x-handler client
 use this data attributes inside any of the following tags:
 form,button,a, and any form input tag
@@ -29,15 +40,27 @@ install dependencies
 ```
 npm run prebuild
 ```
-start app
+start dev app
 ```
  npm start
 ```
-create package
+create x64 package
 ```
- npm run build
+ npm run exe64
 ```
-create windows installer with squirrel
+create x32 package
+```
+ npm run exe32
+```
+create x64 installer
+```
+ npm run set64
+```
+create x32 installer
+```
+ npm run set32
+```
+create all windows installer
 ```
  npm run setup
 ```
