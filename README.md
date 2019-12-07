@@ -3,6 +3,7 @@ electro-node is a Desktop App And Server
 frontend and backend connected with the x-handler on the client and server
 
 ## file structure
+```
 root-folder/
     └── app/                        -- express app
     ├─────└── publiic/                -- main html and js/css libraries
@@ -12,7 +13,7 @@ root-folder/
     └── config /                    -- includes squirrel installition config
     └── menu                        -- main menue settings
     └── main.js                     -- entery point 
-
+```
 ## x-handler client
 use this data attributes inside any of the following tags:
 form,button,a, and any form input tag
