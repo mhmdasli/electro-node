@@ -52,7 +52,7 @@ const createWindow = () => {
   win = new BrowserWindow({
     width: 800,
     height: 600,
-    show: false,
+    show: true,
     icon: iconPath,
     webPreferences: {
       webSecurity: false
@@ -61,7 +61,7 @@ const createWindow = () => {
   // and load the index.html of the app.
   win.loadURL(winUrl)
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+   win.webContents.openDevTools()
 
   // Emitted when the window is closed but keep the app runing.
   win.on('close', (evt) => {
@@ -103,7 +103,7 @@ app.on('ready', () => {
 app.on('activate', function () {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) createWindow()
+  if (win === null) createWindow()
 })
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
